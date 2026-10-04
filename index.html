@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Primary SEO Metadata -->
+  <title>Calcutta Heritage Kitchen &amp; Bistro | Minimal Culinary Sanctuary</title>
+  <meta name="description" content="Minimalist gastronomy celebrating the authentic culinary soul of Kolkata on Park Street. Awadhi Mutton Dum Biryani, Kosha Mangsho, Daab Chingri, and Bhetki Paturi.">
+  <meta name="keywords" content="Kolkata restaurant, Calcutta biryani, Kosha Mangsho, Park Street food, Bengali cuisine, Daab Chingri, Mishti Doi, Kolkata heritage food, fine dining Kolkata">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark light">
+  <meta name="author" content="Calcutta Heritage Kitchen & Bistro">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant.restaurant">
+  <meta property="og:title" content="Calcutta Heritage Kitchen &amp; Bistro">
+  <meta property="og:description" content="Minimalist Kolkata Awadhi and Bengali culinary dining on Park Street.">
+  <meta property="og:image" content="assets/images/biryani_hero.jpg">
+  <meta property="og:url" content="https://calcuttaheritagebistro.com">
+
+  <!-- Fonts: Newsreader (Editorial Serif) & Inter (Clean Sans) as used in Void -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
+  <!-- Void-Style Minimalist Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Prevent Theme Flash -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('calcutta_heritage_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <!-- JSON-LD Local Restaurant Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Calcutta Heritage Kitchen & Bistro",
+    "image": "assets/images/biryani_hero.jpg",
+    "description": "Minimalist Awadhi and Bengali dining in Kolkata.",
+    "servesCuisine": ["Bengali", "Awadhi", "Mughlai", "Indian"],
+    "priceRange": "₹₹",
+    "telephone": "+919830024891",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "24B Park Street, Near Camac Street Crossing",
+      "addressLocality": "Kolkata",
+      "addressRegion": "West Bengal",
+      "postalCode": "700016",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 22.5518,
+      "longitude": 88.3524
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "12:00",
+        "closes": "16:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "19:00",
+        "closes": "23:30"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1280"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Announcement">
+    <div class="announcement-text">
+      <span class="announcement-dot"></span>
+      <span id="announcementText">Autumn Tasting Menu live • Reserve early on Park Street.</span>
+    </div>
+    <div class="top-bar-tools">
+      <button class="admin-mode-pill js-open-admin" title="Open In-Browser CMS to update dishes & text (Ctrl+Shift+A)">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+        <span>CMS</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="#home" class="brand-identity" aria-label="Calcutta Heritage Home">
+          <div class="brand-symbol">CH</div>
+          <div>
+            <span class="brand-title js-restaurant-name">Calcutta Heritage</span>
+            <span class="brand-location">Kolkata</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#bento" class="nav-link">Bento Specials</a></li>
+          <li><a href="#menu" class="nav-link">Full Menu</a></li>
+          <li><a href="#heritage" class="nav-link">Heritage</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#reservations" class="nav-link">Book a Table</a></li>
+          <li><a href="#location" class="nav-link">Visit Us</a></li>
+          <!-- Mobile Drawer Day / Night Toggle -->
+          <li class="mobile-nav-theme-item">
+            <button id="mobileThemeToggleBtn" class="mobile-theme-toggle-btn" aria-label="Toggle Day / Night theme" title="Toggle Day / Night theme">
+              <span class="theme-icon-slot">
+                <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+              </span>
+              <span class="theme-mode-text">Day Mode (Light)</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- Minimal Header Actions (Day/Night Toggle + WhatsApp + Reserve) -->
+        <div class="nav-actions">
+          <!-- Day / Night Mode Toggle Button -->
+          <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Day / Night theme" title="Toggle Day / Night theme">
+            <!-- Sun Icon (shown in dark mode to switch to day) -->
+            <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <!-- Moon Icon (shown in light mode to switch to night) -->
+            <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <!-- Minimal WhatsApp Logo Button -->
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-wa-minimal js-wa-link" aria-label="WhatsApp" title="Direct WhatsApp Chat">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.974.53 1.957.817 2.795.817 3.183 0 5.768-2.587 5.768-5.768 0-3.181-2.585-5.768-5.767-5.768zm0 10.364c-.812 0-1.608-.225-2.302-.649l-.165-.101-1.713.449.457-1.67-.107-.171c-.463-.736-.708-1.593-.707-2.457 0-2.536 2.064-4.6 4.601-4.6 2.535 0 4.598 2.064 4.598 4.6 0 2.536-2.063 4.6-4.602 4.6z"/>
+            </svg>
+          </a>
+
+          <a href="#reservations" class="btn-minimal-outline">Reserve</a>
+          <button class="menu-toggle" id="menuToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+            ☰
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         HERO SECTION WITH DYNAMIC CAROUSEL
+         ====================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text Side -->
+          <div class="hero-content framer-fade-in framer-stagger-1 is-visible">
+            <div class="hero-badge-pill">
+              <span>Park Street • Heritage Gastronomy</span>
+            </div>
+
+            <h1 class="hero-headline" id="heroHeadline">
+              Royalty, Romance &amp; <span class="em">Heritage Dum</span>
+            </h1>
+
+            <p class="hero-subhead" id="heroSubhead">
+              The timeless culinary symphony of Nawabi Awadh dum cooking and authentic Bengali Zamindari traditions, crafted with minimal elegance on Park Street.
+            </p>
+
+            <div class="hero-actions-row">
+              <a href="#bento" class="btn-green-solid">
+                <span>Explore Bento Specials</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+              <a href="#menu" class="btn-minimal-outline">
+                <span>View Full Menu</span>
+              </a>
+            </div>
+
+            <div class="hero-meta-stats">
+              <div class="stat-item">
+                <strong>4.9 ★</strong>
+                <span>1,280+ Reviews</span>
+              </div>
+              <div class="stat-item">
+                <strong>1928</strong>
+                <span>Culinary Legacy</span>
+              </div>
+              <div class="stat-item">
+                <strong>100%</strong>
+                <span>Natural Spices</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Carousel Side with Tactile Paper Overlay -->
+          <div class="framer-fade-in framer-stagger-2 is-visible">
+            <div class="hero-carousel-container" id="heroCarousel">
+              <div class="carousel-slides-wrapper">
+                <!-- Slide 1 (LCP Hero Image with fetchpriority="high") -->
+                <div class="carousel-slide paper-overlay-wrap active" data-slide="0">
+                  <img src="assets/images/biryani_hero.jpg" 
+                       alt="Royal Kolkata Mutton Dum Biryani" 
+                       class="carousel-slide-img" 
+                       fetchpriority="high"
+                       width="800" 
+                       height="500">
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide paper-overlay-wrap" data-slide="1">
+                  <img src="assets/images/kosha_mangsho.jpg" 
+                       alt="Slow-Braised Kosha Mangsho & Luchi" 
+                       class="carousel-slide-img" 
+                       loading="lazy" 
+                       width="800" 
+                       height="500">
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide paper-overlay-wrap" data-slide="2">
+                  <img src="assets/images/daab_chingri.jpg" 
+                       alt="Smoked Daab Chingri in Green Coconut" 
+                       class="carousel-slide-img" 
+                       loading="lazy" 
+                       width="800" 
+                       height="500">
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="carousel-slide paper-overlay-wrap" data-slide="3">
+                  <img src="assets/images/bhetki_paturi.jpg" 
+                       alt="Gondhoraj Bhetki Paturi in Banana Leaf" 
+                       class="carousel-slide-img" 
+                       loading="lazy" 
+                       width="800" 
+                       height="500">
+                </div>
+              </div>
+
+              <!-- Carousel Footer Bar -->
+              <div class="carousel-footer-bar">
+                <div>
+                  <div class="carousel-title-meta" id="carouselCaptionTitle">Royal Kolkata Mutton Dum Biryani</div>
+                  <div class="carousel-price-meta" id="carouselCaptionSub">₹495 • Aged Basmati &amp; Golden Potato</div>
+                </div>
+                <div class="carousel-nav-controls">
+                  <span class="carousel-nav-counter" id="carouselCounter">01 / 04</span>
+                  <button class="carousel-arrow-btn" id="carouselPrevBtn" aria-label="Previous Slide">‹</button>
+                  <button class="carousel-arrow-btn" id="carouselNextBtn" aria-label="Next Slide">›</button>
+                  <a href="#" target="_blank" rel="noopener noreferrer" id="carouselWaBtn" class="btn-wa-minimal" style="width:30px; height:30px;" title="Quick Order on WhatsApp">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.974.53 1.957.817 2.795.817 3.183 0 5.768-2.587 5.768-5.768 0-3.181-2.585-5.768-5.767-5.768zm0 10.364c-.812 0-1.608-.225-2.302-.649l-.165-.101-1.713.449.457-1.67-.107-.171c-.463-.736-.708-1.593-.707-2.457 0-2.536 2.064-4.6 4.601-4.6 2.535 0 4.598 2.064 4.598 4.6 0 2.536-2.063 4.6-4.602 4.6z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FEATURED BENTO BOX GRID
+         ====================================================================== -->
+    <section class="bento-section" id="bento">
+      <div class="container">
+        <header class="section-header-wrap framer-fade-in is-visible">
+          <span class="section-label">Architecture</span>
+          <h2 class="section-title">Featured Bento Specials</h2>
+          <p class="section-desc">
+            Culinary masterpieces and heritage philosophy arranged in a minimal Bento Grid.
+          </p>
+        </header>
+
+        <!-- Dynamic Bento Grid Container -->
+        <div class="bento-grid" id="bentoGridContainer">
+          <!-- Populated by assets/js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FULL SIGNATURE MENU
+         ====================================================================== -->
+    <section class="menu-section" id="menu">
+      <div class="container">
+        <header class="section-header-wrap framer-fade-in is-visible">
+          <span class="section-label">Catalog</span>
+          <h2 class="section-title">The Complete Signature Menu</h2>
+          <p class="section-desc">
+            Authentic Bengali starters, royal mains simmered over coal, artisanal sweets, and botanical coolers.
+          </p>
+        </header>
+
+        <!-- Filter Controls -->
+        <div class="menu-filter-controls framer-fade-in is-visible">
+          <div class="filter-pills-wrap">
+            <button class="filter-pill active" data-category="all">All</button>
+            <button class="filter-pill" data-category="biryani">Royal Biryani</button>
+            <button class="filter-pill" data-category="mains">Heritage Mains</button>
+            <button class="filter-pill" data-category="starters">Starters &amp; Paturi</button>
+            <button class="filter-pill" data-category="desserts">Mishti &amp; Sweets</button>
+            <button class="filter-pill" data-category="cocktails">Botanical Coolers</button>
+          </div>
+
+          <div class="menu-search-wrap">
+            <div class="search-box">
+              <svg class="search-icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="menuSearchInput" class="search-input-field" placeholder="Search dish, spice, or ingredient..." aria-label="Search menu">
+            </div>
+
+            <div style="display:flex; gap:0.4rem;">
+              <button class="diet-pill active" data-diet="all">All</button>
+              <button class="diet-pill" data-diet="veg">🌱 Veg</button>
+              <button class="diet-pill" data-diet="non-veg">🍗 Non-Veg</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Menu Cards Grid -->
+        <div class="menu-grid" id="fullMenuContainer">
+          <!-- Populated by assets/js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FIXED HERITAGE SYSTEM (Anchored to #heritage and #story)
+         ====================================================================== -->
+    <section class="heritage-section" id="heritage">
+      <!-- Secondary Anchor for Legacy Links -->
+      <span id="story" style="display:block; position:relative; top:-80px; visibility:hidden;"></span>
+      <div class="container">
+        <header class="section-header-wrap framer-fade-in is-visible">
+          <span class="section-label">Heritage System • Est. 1928</span>
+          <h2 class="section-title">The Culinary Soul of Kolkata</h2>
+          <p class="section-desc">
+            Where exiled Nawabi royalty met the sacred culinary traditions of Bengal along Park Street.
+          </p>
+        </header>
+
+        <div class="bento-grid">
+          <!-- Flagship Heritage Photo with Paper Texture (Span 7) -->
+          <div class="bento-card bento-span-7 paper-overlay-wrap framer-fade-in is-visible" style="min-height: 400px;">
+            <img src="assets/images/restaurant_interior.jpg" 
+                 alt="Calcutta Heritage Grand Colonial Dining Room" 
+                 style="width:100%; height:100%; object-fit:cover;" 
+                 loading="lazy" 
+                 width="700" 
+                 height="450">
+            <div style="position: absolute; bottom: 1.2rem; left: 1.2rem; background: var(--bg-card); border: 1px solid var(--border-card); padding: 0.4rem 0.9rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--green-natural);">
+              📍 24B Park Street • Heritage Dining Hall
+            </div>
+          </div>
+
+          <!-- Main Philosophy Card (Span 5) -->
+          <div class="bento-card bento-span-5 bento-info-box framer-fade-in is-visible">
+            <div>
+              <div class="bento-info-icon">🏛️</div>
+              <h3 style="font-family:var(--font-serif); font-size:1.35rem; font-weight:500; color:var(--text-white); margin-bottom:0.6rem;">
+                Awadh Meets Bengal (1856 – 1928)
+              </h3>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.65;">
+                When Nawab Wajid Ali Shah arrived at Metiabruz, his master royal khansamas introduced the sacred art of Persian saffron dum, weaving it together with Bengal's golden potato, virgin mustard oil, and Gondhoraj lime aromatics.
+              </p>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.65; margin-top:0.8rem;">
+                Established on Park Street in 1928, Calcutta Heritage preserves every nuance of that historic harmony without shortcut or dilution.
+              </p>
+            </div>
+
+            <div style="display:flex; gap:0.8rem; align-items:center; margin-top:1.5rem;">
+              <a href="#reservations" class="btn-green-solid">Reserve Table</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn-wa-minimal js-wa-link" title="Chat on WhatsApp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.974.53 1.957.817 2.795.817 3.183 0 5.768-2.587 5.768-5.768 0-3.181-2.585-5.768-5.767-5.768zm0 10.364c-.812 0-1.608-.225-2.302-.649l-.165-.101-1.713.449.457-1.67-.107-.171c-.463-.736-.708-1.593-.707-2.457 0-2.536 2.064-4.6 4.601-4.6 2.535 0 4.598 2.064 4.598 4.6 0 2.536-2.063 4.6-4.602 4.6z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Heritage Pillar 1 (Span 4) -->
+          <div class="heritage-pillar-card bento-span-4 framer-fade-in is-visible">
+            <div>
+              <span class="pillar-year-badge">Pillar I • Awadhi Dum</span>
+              <h4 class="pillar-heading">Dough-Sealed Brass Handis</h4>
+              <p class="pillar-text">
+                Slow coal ember cooking inside hand-hammered brass vessels sealed with wheat dough, ensuring zero steam escapes and every grain of basmati absorbs the rich bone marrow essence.
+              </p>
+            </div>
+            <div class="pillar-secret-tag">
+              <span>Secret:</span> Wheat Dough Seal • Saffron Marrow Dum
+            </div>
+          </div>
+
+          <!-- Heritage Pillar 2 (Span 4) -->
+          <div class="heritage-pillar-card bento-span-4 framer-fade-in is-visible">
+            <div>
+              <span class="pillar-year-badge">Pillar II • Stone Ground</span>
+              <h4 class="pillar-heading">Granite-Crushed Masalas</h4>
+              <p class="pillar-text">
+                Fresh daily stone grinding of shahi jeera, javitri (mace), green cardamom, and cinnamon in granite mortars, mixed with cold-pressed virgin mustard oil and farm desi ghee.
+              </p>
+            </div>
+            <div class="pillar-secret-tag">
+              <span>Secret:</span> Shil Nora Mortar • Javitri &amp; Elaichi
+            </div>
+          </div>
+
+          <!-- Heritage Pillar 3 (Span 4) -->
+          <div class="heritage-pillar-card bento-span-4 framer-fade-in is-visible">
+            <div>
+              <span class="pillar-year-badge">Pillar III • Botanical Infusion</span>
+              <h4 class="pillar-heading">Charred Banana Leaves &amp; Lime</h4>
+              <p class="pillar-text">
+                Enveloping fresh daily catch in green banana leaves over cast iron griddles, finished with cold-pressed mustard emulsion and the sacred citrus fragrance of royal Gondhoraj lime.
+              </p>
+            </div>
+            <div class="pillar-secret-tag">
+              <span>Secret:</span> Cast Iron Griddle • Gondhoraj King Lime
+            </div>
+          </div>
+
+          <!-- Heritage Provenance & Craft Metric Strip (Span 12) -->
+          <div class="heritage-provenance-strip bento-span-12 framer-fade-in is-visible">
+            <div class="provenance-col">
+              <span class="provenance-number">1856</span>
+              <span class="provenance-label">Royal Metiabruz Dum Origin</span>
+            </div>
+            <div class="provenance-col">
+              <span class="provenance-number">98+</span>
+              <span class="provenance-label">Years on Historic Park Street</span>
+            </div>
+            <div class="provenance-col">
+              <span class="provenance-number">6 hrs</span>
+              <span class="provenance-label">Slow Coal-Ember Dum Marrow</span>
+            </div>
+            <div class="provenance-col">
+              <span class="provenance-number">100%</span>
+              <span class="provenance-label">Cold-Pressed Mustard &amp; Desi Ghee</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CUSTOMER REVIEWS
+         ====================================================================== -->
+    <section class="menu-section" id="reviews">
+      <div class="container">
+        <header class="section-header-wrap framer-fade-in is-visible">
+          <span class="section-label">Patron Impressions</span>
+          <h2 class="section-title">Words from Connoisseurs</h2>
+          <p class="section-desc">
+            Reflections from regular Kolkata patrons, food critics, and international travellers.
+          </p>
+        </header>
+
+        <div class="bento-grid" id="testimonialsContainer">
+          <!-- Populated by assets/js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TABLE RESERVATION
+         ====================================================================== -->
+    <section class="reservation-section" id="reservations">
+      <div class="container">
+        <div class="reservation-flat-box framer-fade-in is-visible">
+          <header class="section-header-wrap" style="margin-bottom: 2rem;">
+            <span class="section-label">Hospitality</span>
+            <h2 class="section-title">Reserve Your Table</h2>
+            <p class="section-desc">
+              Candlelight dinners, family feasts, or business gatherings. Instant confirmation via WhatsApp.
+            </p>
+          </header>
+
+          <form id="reservationForm">
+            <div class="form-grid">
+              <div class="form-group-flat">
+                <label for="resName" class="form-label-flat">Full Name *</label>
+                <input type="text" id="resName" class="form-input-flat" placeholder="e.g. Sourav Banerjee" required>
+              </div>
+
+              <div class="form-group-flat">
+                <label for="resPhone" class="form-label-flat">Mobile Number *</label>
+                <input type="tel" id="resPhone" class="form-input-flat" placeholder="e.g. +91 98300 00000" required>
+              </div>
+
+              <div class="form-group-flat">
+                <label for="resGuests" class="form-label-flat">Party Size *</label>
+                <select id="resGuests" class="form-select-flat" required>
+                  <option value="2">2 Guests (Couple Table)</option>
+                  <option value="4" selected>4 Guests (Standard Dining)</option>
+                  <option value="6">6 Guests (Family Table)</option>
+                  <option value="8+">8+ Guests (Celebration Banquet)</option>
+                </select>
+              </div>
+
+              <div class="form-group-flat">
+                <label for="resDate" class="form-label-flat">Preferred Date *</label>
+                <input type="date" id="resDate" class="form-input-flat" required>
+              </div>
+
+              <div class="form-group-flat">
+                <label for="resTime" class="form-label-flat">Time Slot *</label>
+                <select id="resTime" class="form-select-flat" required>
+                  <optgroup label="Lunch Service">
+                    <option value="12:30 PM">12:30 PM</option>
+                    <option value="1:30 PM" selected>1:30 PM</option>
+                    <option value="2:30 PM">2:30 PM</option>
+                  </optgroup>
+                  <optgroup label="Dinner Service">
+                    <option value="7:30 PM">7:30 PM</option>
+                    <option value="8:30 PM">8:30 PM</option>
+                    <option value="9:30 PM">9:30 PM</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="form-group-flat">
+                <label for="resSeating" class="form-label-flat">Seating Zone</label>
+                <select id="resSeating" class="form-select-flat">
+                  <option value="Grand Heritage Hall">Grand Heritage Hall</option>
+                  <option value="Window Balcony Overlooking Park St">Window Balcony Overlooking Park St</option>
+                  <option value="Private Zamindari Courtyard">Private Zamindari Courtyard</option>
+                </select>
+              </div>
+
+              <div class="form-group-flat full-width">
+                <label for="resNotes" class="form-label-flat">Special Requests (Optional)</label>
+                <textarea id="resNotes" class="form-textarea-flat" rows="2" placeholder="e.g., Anniversary, less spice, high chair..."></textarea>
+              </div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+              <span style="font-size:0.78rem; color:var(--text-dim);">
+                🔒 No prepayment required. Reservation instantly routed to our host.
+              </span>
+              <button type="submit" class="btn-green-solid">
+                <span>Confirm on WhatsApp</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.974.53 1.957.817 2.795.817 3.183 0 5.768-2.587 5.768-5.768 0-3.181-2.585-5.768-5.767-5.768zm0 10.364c-.812 0-1.608-.225-2.302-.649l-.165-.101-1.713.449.457-1.67-.107-.171c-.463-.736-.708-1.593-.707-2.457 0-2.536 2.064-4.6 4.601-4.6 2.535 0 4.598 2.064 4.598 4.6 0 2.536-2.063 4.6-4.602 4.6z"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         LOCATION, HOURS & MAP SECTION
+         ====================================================================== -->
+    <section class="menu-section" id="location">
+      <div class="container">
+        <header class="section-header-wrap framer-fade-in is-visible">
+          <span class="section-label">Address</span>
+          <h2 class="section-title">Location &amp; Service Hours</h2>
+          <p class="section-desc">
+            Located on Park Street’s historic dining stretch. Open daily for lunch and dinner.
+          </p>
+        </header>
+
+        <div class="bento-grid">
+          <div class="bento-card bento-span-5 bento-info-box framer-fade-in is-visible">
+            <div>
+              <div class="bento-info-icon">📍</div>
+              <h3 style="font-family:var(--font-serif); font-size:1.2rem; font-weight:500; color:var(--text-white); margin-bottom:0.4rem;">
+                Park Street, Kolkata
+              </h3>
+              <p style="font-size:0.86rem; color:var(--text-secondary); line-height:1.6;" id="contactAddress">
+                24B Park Street, Near Camac Street Crossing, Kolkata, West Bengal 700016
+              </p>
+
+              <div style="margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--border-subtle);">
+                <div style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.35rem;">Service Times</div>
+                <div style="font-size:0.88rem; color:var(--text-white); margin-bottom:0.25rem;">
+                  <strong>Lunch:</strong> <span id="lunchHours">12:00 PM – 4:30 PM</span>
+                </div>
+                <div style="font-size:0.88rem; color:var(--text-white);">
+                  <strong>Dinner:</strong> <span id="dinnerHours">7:00 PM – 11:30 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:0.6rem; align-items:center; margin-top:1.4rem;">
+              <a href="https://maps.google.com/?q=Park+Street+Kolkata" target="_blank" rel="noopener noreferrer" class="btn-minimal-outline">
+                <span>Google Maps ↗</span>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn-wa-minimal js-wa-link" title="WhatsApp Enquiry">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.974.53 1.957.817 2.795.817 3.183 0 5.768-2.587 5.768-5.768 0-3.181-2.585-5.768-5.767-5.768zm0 10.364c-.812 0-1.608-.225-2.302-.649l-.165-.101-1.713.449.457-1.67-.107-.171c-.463-.736-.708-1.593-.707-2.457 0-2.536 2.064-4.6 4.601-4.6 2.535 0 4.598 2.064 4.598 4.6 0 2.536-2.063 4.6-4.602 4.6z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="bento-card bento-span-7 framer-fade-in is-visible" style="min-height: 360px;">
+            <iframe 
+              title="Calcutta Heritage Park Street Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.717621147514!2d88.35122047596048!3d22.55222853372227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02771239634e2b%3A0xe214ef5e96684e27!2sPark%20St%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              style="width:100%; height:100%; border:0; filter: var(--map-filter);"
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-identity">
+            <div class="brand-symbol">CH</div>
+            <span class="brand-title js-restaurant-name">Calcutta Heritage</span>
+          </div>
+          <p>
+            Preserving Kolkata's culinary soul through minimal elegance, Awadhi dum craft, and warm hospitality on historic Park Street.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#bento">Bento Specials</a></li>
+            <li><a href="#menu">Full Signature Menu</a></li>
+            <li><a href="#heritage">Heritage System</a></li>
+            <li><a href="#reservations">Book a Table</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Highlights</h4>
+          <ul class="footer-links">
+            <li><a href="#bento">Royal Mutton Dum Biryani</a></li>
+            <li><a href="#bento">Slow-Braised Kosha Mangsho</a></li>
+            <li><a href="#bento">Smoked Daab Chingri</a></li>
+            <li><a href="#bento">Gondhoraj Bhetki Paturi</a></li>
+            <li><a href="#bento">Baked Mishti Doi</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Management</h4>
+          <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:0.9rem;">
+            Update dish prices, swap featured items, or edit restaurant info:
+          </p>
+          <button class="btn-minimal-outline js-open-admin" style="font-size:0.78rem; padding:0.4rem 0.8rem;">
+            Launch CMS
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Calcutta Heritage Kitchen &amp; Bistro. All rights reserved.</p>
+        <p>Day &amp; Night Minimalist System • Natural Green &amp; White • Kolkata</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MINIMAL WHATSAPP FLOATING BUTTON (Natural Green, No Glow)
+       ======================================================================== -->
+  <aside class="floating-whatsapp-widget" aria-label="WhatsApp Quick Contact">
+    <a href="#" target="_blank" rel="noopener noreferrer" class="floating-wa-btn js-wa-link" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.974.53 1.957.817 2.795.817 3.183 0 5.768-2.587 5.768-5.768 0-3.181-2.585-5.768-5.767-5.768zm0 10.364c-.812 0-1.608-.225-2.302-.649l-.165-.101-1.713.449.457-1.67-.107-.171c-.463-.736-.708-1.593-.707-2.457 0-2.536 2.064-4.6 4.601-4.6 2.535 0 4.598 2.064 4.598 4.6 0 2.536-2.063 4.6-4.602 4.6z"/>
+      </svg>
+    </a>
+  </aside>
+
+  <!-- ========================================================================
+       IN-BROWSER VISUAL ADMIN CMS (Native <dialog closedby="any">)
+       ======================================================================== -->
+  <dialog id="adminDialog" class="admin-dialog" closedby="any" aria-labelledby="adminTitle">
+    <div class="admin-modal-header">
+      <h3 id="adminTitle">
+        <span>Restaurant Manager &amp; Menu CMS</span>
+      </h3>
+      <button class="btn-close-modal" id="closeAdminBtn" aria-label="Close Admin Modal">&times;</button>
+    </div>
+
+    <div class="admin-modal-body">
+      <div class="admin-tabs-row">
+        <button class="admin-tab-btn active" data-admin-view="dishes">Dishes &amp; Bento Items</button>
+        <button class="admin-tab-btn" data-admin-view="settings">Restaurant Info &amp; Hours</button>
+        <button class="admin-tab-btn" data-admin-view="backup">Import &amp; Export JSON</button>
+      </div>
+
+      <!-- VIEW 1: DISHES -->
+      <div id="adminView_dishes" class="admin-view-panel">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem;">
+          <p style="font-size:0.85rem; color:var(--text-secondary);">
+            Edit prices, swap dishes, or toggle <strong>"Featured on Bento"</strong> with one click.
+          </p>
+          <button id="adminNewDishBtn" class="btn-green-solid" style="font-size:0.78rem; padding:0.4rem 0.8rem;">
+            + Add New Dish
+          </button>
+        </div>
+
+        <div id="adminDishFormModal" style="display:none; background:var(--bg-card); border:1px solid var(--border-card); border-radius:var(--radius-sm); padding:1.2rem; margin-bottom:1.2rem;">
+          <h4 id="adminDishFormTitle" style="font-family:var(--font-serif); font-size:1.1rem; color:var(--text-white); margin-bottom:0.8rem;">Add Dish</h4>
+          <form id="adminDishForm">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; margin-bottom:0.8rem;">
+              <div class="form-group-flat">
+                <label class="form-label-flat">Dish Name (English) *</label>
+                <input type="text" id="dishNameInput" class="form-input-flat" required>
+              </div>
+              <div class="form-group-flat">
+                <label class="form-label-flat">Bengali Name</label>
+                <input type="text" id="dishBengaliNameInput" class="form-input-flat" placeholder="e.g. রয়্যাল বিরিয়ানি">
+              </div>
+              <div class="form-group-flat">
+                <label class="form-label-flat">Category *</label>
+                <select id="dishCategorySelect" class="form-select-flat" required>
+                  <option value="biryani">Royal Biryani</option>
+                  <option value="mains">Heritage Mains</option>
+                  <option value="starters">Starters &amp; Paturi</option>
+                  <option value="desserts">Mishti &amp; Sweets</option>
+                  <option value="cocktails">Botanical Coolers</option>
+                </select>
+              </div>
+              <div class="form-group-flat">
+                <label class="form-label-flat">Price in INR (₹) *</label>
+                <input type="number" id="dishPriceInput" class="form-input-flat" min="10" step="5" required>
+              </div>
+              <div class="form-group-flat">
+                <label class="form-label-flat">Dietary Type *</label>
+                <select id="dishVegSelect" class="form-select-flat">
+                  <option value="false">🍗 Non-Vegetarian</option>
+                  <option value="true">🌱 Pure Vegetarian</option>
+                </select>
+              </div>
+              <div class="form-group-flat">
+                <label class="form-label-flat">Spice Level</label>
+                <select id="dishSpiceInput" class="form-select-flat">
+                  <option value="0">0 - Mild / Sweet</option>
+                  <option value="1">1 - Gentle Aroma 🌶️</option>
+                  <option value="2">2 - Medium Spiced 🌶️🌶️</option>
+                  <option value="3">3 - Royal Heat 🌶️🌶️🌶️</option>
+                </select>
+              </div>
+              <div class="form-group-flat">
+                <label class="form-label-flat">Badge</label>
+                <input type="text" id="dishBadgeInput" class="form-input-flat" placeholder="e.g. Bestseller / Signature">
+              </div>
+              <div class="form-group-flat">
+                <label class="form-label-flat">Image Path / URL</label>
+                <input type="text" id="dishImageInput" class="form-input-flat" placeholder="assets/images/biryani_hero.jpg">
+              </div>
+              <div class="form-group-flat full-width">
+                <label class="form-label-flat">Description *</label>
+                <textarea id="dishDescInput" class="form-textarea-flat" rows="2" required></textarea>
+              </div>
+              <div class="form-group-flat full-width">
+                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; font-weight:500; color:var(--green-natural);">
+                  <input type="checkbox" id="dishFeaturedToggle" checked style="width:16px; height:16px;">
+                  <span>Feature this dish on Home Bento grid front &amp; center</span>
+                </label>
+              </div>
+            </div>
+            <div style="display:flex; gap:0.6rem; justify-content:flex-end;">
+              <button type="button" id="cancelDishFormBtn" class="btn-minimal-outline" style="font-size:0.78rem; padding:0.35rem 0.8rem;">Cancel</button>
+              <button type="submit" class="btn-green-solid" style="font-size:0.78rem; padding:0.35rem 0.9rem;">Save Dish</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="adminDishesList"></div>
+      </div>
+
+      <!-- VIEW 2: SETTINGS -->
+      <div id="adminView_settings" class="admin-view-panel" style="display:none;">
+        <form id="adminSettingsForm">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; margin-bottom:1.2rem;">
+            <div class="form-group-flat">
+              <label class="form-label-flat">Restaurant Name</label>
+              <input type="text" id="settingsNameInput" class="form-input-flat" required>
+            </div>
+            <div class="form-group-flat">
+              <label class="form-label-flat">Location / Subtitle</label>
+              <input type="text" id="settingsSubtitleInput" class="form-input-flat" required>
+            </div>
+            <div class="form-group-flat full-width">
+              <label class="form-label-flat">Hero Headline</label>
+              <input type="text" id="settingsHeadlineInput" class="form-input-flat" required>
+            </div>
+            <div class="form-group-flat">
+              <label class="form-label-flat">Phone Number</label>
+              <input type="text" id="settingsPhoneInput" class="form-input-flat" required>
+            </div>
+            <div class="form-group-flat">
+              <label class="form-label-flat">WhatsApp Number (e.g. 919830024891)</label>
+              <input type="text" id="settingsWaInput" class="form-input-flat" required>
+            </div>
+            <div class="form-group-flat full-width">
+              <label class="form-label-flat">Announcement Banner Text</label>
+              <input type="text" id="settingsBannerInput" class="form-input-flat" required>
+            </div>
+            <div class="form-group-flat">
+              <label class="form-label-flat">Lunch Hours</label>
+              <input type="text" id="settingsLunchInput" class="form-input-flat" required>
+            </div>
+            <div class="form-group-flat">
+              <label class="form-label-flat">Dinner Hours</label>
+              <input type="text" id="settingsDinnerInput" class="form-input-flat" required>
+            </div>
+            <div class="form-group-flat full-width">
+              <label class="form-label-flat">Physical Address</label>
+              <input type="text" id="settingsAddressInput" class="form-input-flat" required>
+            </div>
+          </div>
+          <button type="submit" class="btn-green-solid">Update Settings</button>
+        </form>
+      </div>
+
+      <!-- VIEW 3: BACKUP -->
+      <div id="adminView_backup" class="admin-view-panel" style="display:none;">
+        <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:var(--radius-sm); padding:1.2rem; margin-bottom:1rem;">
+          <h4 style="font-family:var(--font-serif); font-size:1.05rem; color:var(--text-white); margin-bottom:0.35rem;">Export Menu Data</h4>
+          <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:0.9rem;">
+            Download your current dishes and settings as a standalone <code>menu-data.json</code> file.
+          </p>
+          <button id="adminExportBtn" class="btn-green-solid" style="font-size:0.78rem; padding:0.4rem 0.9rem;">
+            📥 Download menu-data.json
+          </button>
+        </div>
+
+        <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:var(--radius-sm); padding:1.2rem; margin-bottom:1rem;">
+          <h4 style="font-family:var(--font-serif); font-size:1.05rem; color:var(--text-white); margin-bottom:0.35rem;">Import Menu Data</h4>
+          <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:0.9rem;">
+            Load an existing <code>menu-data.json</code> file to restore or batch-update your menu.
+          </p>
+          <input type="file" id="adminImportInput" accept=".json" class="form-input-flat" style="max-width:280px;">
+        </div>
+
+        <div style="background:rgba(239, 68, 68, 0.05); border:1px solid rgba(239, 68, 68, 0.2); border-radius:var(--radius-sm); padding:1.2rem;">
+          <h4 style="color:#ef4444; font-size:0.92rem; margin-bottom:0.35rem;">Reset to Factory Defaults</h4>
+          <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:0.8rem;">
+            Restore original handcrafted Kolkata dishes and settings.
+          </p>
+          <button id="adminResetDefaultsBtn" class="btn-action-sm btn-delete" style="padding:0.4rem 0.8rem;">
+            Reset All Data to Defaults
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-modal-footer">
+      <span style="font-size:0.78rem; color:var(--text-dim);">
+        Changes are saved immediately to browser storage and updated live.
+      </span>
+      <button type="button" class="btn-minimal-outline" onclick="document.getElementById('adminDialog').close()" style="font-size:0.78rem; padding:0.35rem 0.8rem;">Close</button>
+    </div>
+  </dialog>
+
+  <!-- Application Logic -->
+  <script src="assets/js/menu-data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
